@@ -1,0 +1,13 @@
+POST signup ? username "pishi" password "meow"
+POST task ? date 1404/03/03 time 4 title "Do Homework"
+GET report ? to 1404/03/02
+GET report ? to 1404/03/03
+GET report ? to 1404/03/04
+PUT task ? task_id 1 date 1404/03/04 time 5 title "Edit Homework"
+GET report ? from 1404/03/03 to 1404/03/04
+GET report ? from 1404/03/04 to 1404/03/04 type task
+GET report ? from 1404/03/04 to 1404/03/05
+GET report ? to 1404/06/05 type event
+DELETE task ? task_id 1
+DELETE task ? task_id 1
+GET report ? to 1404/03/04

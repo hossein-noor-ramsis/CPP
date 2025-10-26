@@ -1,0 +1,7 @@
+POST signup ? username "pishi" password "meow"
+POST periodic_event ? start_date 1404/03/01 end_date 1404/04/01 start_time 9 duration 2 type Weekly week_days Saturday,Sunday title "Math Class" description "Algebra"
+POST periodic_event ? start_date 1404/03/05 end_date 1404/04/05 start_time 10 duration 1 type Weekly week_days Saturday,Monday title "English Class" description "Grammar"
+POST periodic_event ? start_date 1404/03/05 end_date 1404/04/05 start_time 10 duration 1 type Weekly week_days dfgdafg title "English Class" description "Grammar"
+POST periodic_event ? start_date 1404/03/05 end_date 1404/04/05 start_time 10 duration 1 type Weekly week_days title "English Class" description "Grammar"
+POST periodic_event ? start_date 1404/03/05 end_date 1404/04/05 start_time 10 duration 1 type Weekly title "English Class" description "Grammar" week_days
+GET report ? to 1404/05/10 type periodic_event

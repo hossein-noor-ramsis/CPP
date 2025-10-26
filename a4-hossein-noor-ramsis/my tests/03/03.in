@@ -1,0 +1,2 @@
+create_template 'Saturday mornings' Maths:easy:2 Maths:hard:1 Physics:hard:3
+generate_test 'my first test' 'Saturday mornings'

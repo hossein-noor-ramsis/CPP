@@ -1,0 +1,13 @@
+test:
+
+dos2unix judge.sh
+./judge.sh -t
+./judge.sh -r
+chmod +x judge.sh
+
+// g++ ./src/main.cpp -o ./src/build/main.exe
+// ./src/build/main.exe "./src/tables.csv" "./src/students.csv"
+
+// g++ -E ./src/main.cpp -o ./src/build/preprocess.i
+// g++ -S ./src/main.cpp -o ./src/build/assembly.s
+// g++ -C ./src/main.cpp -o ./src/build/object.o

@@ -1,0 +1,31 @@
+POST signup ? username "pishi" password "meow"
+POST logout ?
+POST signup ? username "ali" password "ali1234"
+POST logout ?
+POST login ? username "pishi" password "meow"
+GET join_event ?
+POST join_event ? guests "ali" date 1404/04/04 start_time 12 end_time 13 title "Hello" description "World"
+POST join_event ? guests "ali" date 1404/04/04 start_time 12 end_time 13 title "Hello" description "World"
+POST join_event ? guests "ali" date 1404/03/05 start_time 10 end_time 14 title "Hello 2" description "World 2"
+POST join_event ? guests "ali" date 1404/08/08 start_time 10 end_time 14 title "Hello 3" description "World 3"
+GET join_event ?
+POST logout ?
+POST login ? username "ali" password "ali1234"
+POST event ? date 1404/04/04 start_time 11 duration 3 title "Quiz" description "DB"
+POST periodic_event ? start_date 1404/03/05 end_date 1404/12/05 day 5 start_time 11 duration 1 type Monthly title "Checkup"
+POST join_event ? guests "pishi" date 1404/08/07 start_time 10 end_time 14 title "Hello 4" description "World 4"
+GET join_event ?
+POST confirm_join_event ? invitation_id 1
+POST confirm_join_event ? invitation_id 2
+POST confirm_join_event ? invitation_id 4
+POST confirm_join_event ? invitation_id 3
+GET join_event ?
+GET report ? to 1406/01/02
+POST logout ?
+POST login ? username "pishi" password "meow"
+GET report ? to 1406/01/02
+GET join_event ?
+POST reject_join_event ? invitation_id 3
+POST reject_join_event ? invitation_id 4
+GET report ? to 1406/01/02
+GET join_event ?

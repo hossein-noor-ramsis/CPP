@@ -1,0 +1,4 @@
+id ,name   ,friend_id ,enemy_id
+ 1 ,Paria  ,        2 ,       4
+ 4 ,Parsa  ,        2 ,       1
+ 2 ,Mehrad ,        4 ,       1

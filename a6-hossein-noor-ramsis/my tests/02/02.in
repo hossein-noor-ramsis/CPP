@@ -1,0 +1,11 @@
+POST signup ? username "ux" password "p"
+POST event ? date 1404/01/27 start_time 9 duration 3 title "E1" description "e1"
+POST event ? date 1404/01/27 start_time 9 duration 3 title "E2" description "e2"
+POST event ? date 1404/01/27 start_time 9 duration 1 title "E2" description "e2"
+POST event ? date 1404/01/27 start_time 11 duration 1 title "E2" description "e2"
+POST event ? date 1404/01/27 start_time 10 duration 1 title "E2" description "e2"
+POST event ? date 1404/01/27 start_time 8 duration 2 title "E2" description "e2"
+POST event ? date 1404/01/27 start_time 11 duration 2 title "E2" description "e2"
+POST event ? date 1404/01/27 start_time 12 duration 2 title "E2" description "e2"
+POST event ? date 1404/01/27 start_time 7 duration 2 title "E3" description "e3"
+GET report ? from 1404/01/26 to 1404/02/03

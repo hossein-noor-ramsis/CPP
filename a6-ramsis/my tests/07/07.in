@@ -1,0 +1,3 @@
+POST signup ? username "pishi" password "meow"
+POST periodic_event ? start_date 1406/04/01 end_date 1406/12/01 day 5 start_time 10 duration 2 type Monthly title "Checkup"
+POST periodic_event ? start_date 1406/04/01 end_date 1406/12/01 day 5 start_time 10 duration 2 type Monthly title "Overlap"

@@ -1,0 +1,4 @@
+POST signup ? usernamee "pishi" password "meow"
+POST signup ? username "pishi" password "meow"
+POST event ? date 1404/01/03 start_time 13 duration 2 title "Special Event"
+POST periodic_event ? start_date 1404/01/03 end_date 1404/01/13 start_time 13 duration 2 type Weekly week_days Sunday,Wednesday title "Software"

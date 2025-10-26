@@ -1,0 +1,4 @@
+POST signup ? username "pishi" password "meow"
+POST periodic_event ? start_date 1404/01/01 end_date 1404/01/05 start_time 10 duration -2 type Weekly week_days Monday title "Invalid Period"
+POST periodic_event ? start_date 1404/01/01 end_date 1404/01/10 start_time -1 duration 2 type Weekly week_days Monday title "Negative Time"
+POST periodic_event ? start_date 1404/01/01 end_date 1404/01/10 type Weekly week_days Monday title "Missing Time"

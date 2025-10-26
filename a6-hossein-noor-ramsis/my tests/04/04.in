@@ -1,0 +1,5 @@
+POST event ? date 1404/01/02 start_time 10 duration 1 title "Quiz A"
+POST signup ? username "pishi" password ""
+POST signup ? username "pishi" password "meow"
+POST event ? date 1404/01/02 start_time 10 duration 1 title "Quiz A"
+POST event ? date 1404/01/02 start_time 10 duration 1 title "Quiz B"

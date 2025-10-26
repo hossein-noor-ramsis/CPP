@@ -1,0 +1,7 @@
+#define ERROR_MESSAGE "Unknown command"
+#define ADD_TASK "add_task"
+#define ADD_EMPLOYEE "add_employee"
+#define ASSIGN_EMPLOYEE "assign_employee"
+#define FINISH_TASK "finish_task"
+#define REPORT "report"
+#define EXIT "exit"

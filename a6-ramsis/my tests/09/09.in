@@ -1,0 +1,6 @@
+POST signup ? username "pishi" password "meow"
+POST periodic_event ? start_date 1404/01/01 end_date 1404/02/30 day 5 start_time 10 duration 2 type Monthly title "Monthly Check in"
+POST event ? date 1404/01/05 start_time 10 duration 2 title "Project Demo"
+GET report ? to 1404/02/04
+Get report ? to 1404/02/04
+GET report ? to 1404/02/05

@@ -1,0 +1,4 @@
+Id ,x  ,y ,capacity ,type
+ 1 , 2 ,3 ,       4 ,window
+ 2 , 4 ,5 ,       8 ,door
+ 7 ,12 ,6 ,       1 ,middle

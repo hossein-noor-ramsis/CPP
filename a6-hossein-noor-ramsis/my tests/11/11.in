@@ -1,0 +1,5 @@
+POST signup ? username "pishi" password "meow"
+POST task ? date 1404/05/10 time 14 title "Lunch"
+POST task ? date 1404/05/10 time 12 title "Call Friend"
+POST task ? date 1404/05/10 time 9 title "Wake up"
+GET report ? to 1404/05/10 type task

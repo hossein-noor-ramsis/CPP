@@ -1,0 +1,14 @@
+POST signup ? username "pishi" password "meow"
+POST login ? username "pishi" password "meow"
+POST logout ?
+POST login ? username "pishi" password "meow"
+POST task ? date 1404/03/03 time 4 title "Do Homework"
+GET report ? to 1404/03/03 type task
+POST logout ?
+POST signup ? username "pishi2" password "meow2"
+GET report ? to 1404/03/03 type task
+POST task ? date 1404/03/04 time 4 title "Do Homework 2"
+GET report ? to 1404/03/04 type
+POST logout ?
+POST login ? username "pishi" password "meow"
+GET report ? to 1405/03/04

@@ -1,0 +1,8 @@
+1,2c1,2
+< multitask (2): dave, carol, bob
+< bob has done 0 tasks. 
+---
+> multitask (2): bob, carol, dave
+> bob has done 0 tasks.
+5d4
+< 

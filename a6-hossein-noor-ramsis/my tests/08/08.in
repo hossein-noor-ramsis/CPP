@@ -1,0 +1,5 @@
+POST signup ? username "pishi" password "meow"
+POST periodic_event ? start_date 1405/10/25 end_date 1405/11/05 start_time 4 duration 1 type Daily title "Class" description "AP"
+GET report ? to 1405/11/05 jsaflasjf 234uksdf
+POST signup ? username "pishi" password "meow"
+GET report ? from 1405/10/30 to 1405/11/03 type periodic_event
