@@ -6,14 +6,14 @@
 
 using namespace std;
 
-//* defines
-#define ERROR_MESSAGE "Unknown command"
-#define ADD_TASK "add_task"
-#define ADD_EMPLOYEE "add_employee"
-#define ASSIGN_EMPLOYEE "assign_employee"
-#define FINISH_TASK "finish_task"
-#define REPORT "report"
-#define EXIT "exit"
+//* consts
+constexpr const char *ERROR_MESSAGE = "Unknown command";
+constexpr const char *ADD_TASK = "add_task";
+constexpr const char *ADD_EMPLOYEE = "add_employee";
+constexpr const char *ASSIGN_EMPLOYEE = "assign_employee";
+constexpr const char *FINISH_TASK = "finish_task";
+constexpr const char *REPORT = "report";
+constexpr const char *EXIT = "exit";
 
 //* structs
 typedef struct
@@ -50,6 +50,8 @@ struct CompareTask
 };
 
 //* prototypes
+int runApp();
+
 int addTask(System &system);
 
 int addEmployee(System &system);
@@ -66,6 +68,11 @@ int reportEmployee(System &system);
 
 //* main app
 int main()
+{
+  runApp();
+}
+
+int runApp()
 {
   System system;
   string command;

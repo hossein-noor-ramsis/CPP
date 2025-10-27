@@ -2,6 +2,7 @@
 #define STRUCTS
 
 #include "./model/Activity.hpp"
+
 struct ActivityDateComparator
 {
   bool operator()(const std::shared_ptr<Activity> &a,
