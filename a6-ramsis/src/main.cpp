@@ -1,6 +1,6 @@
 #include "../includes/main.hpp"
 
-int main(int argc, char **argv)
+int main(const int argc, char **argv)
 {
   app(argc, argv);
 
