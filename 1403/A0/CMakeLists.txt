@@ -13,4 +13,9 @@ add_executable(A0 main.cpp
         consts.h
         Utils/String.cpp
         Utils/String.h
-        DB.h)
+        DB.h
+        Controller/TrainController.cpp
+        Controller/TrainController.h
+        Controller/TicketController.cpp
+        Controller/TicketController.h
+)
