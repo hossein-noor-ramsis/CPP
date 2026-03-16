@@ -25,13 +25,13 @@ Train::Train(const Train &other) {
     this->_source = other.getSource();
     this->_destination = other.getDestination();
     this->_time = Time(other.getTime());
-    this->_remainingCapacity = stoi(getRemainingCapacity());
+    this->_remainingCapacity = getRemainingCapacity();
 }
 
 Train &Train::operator=(const Train &other) {
     if (this != &other) {
         // Check for self-assignment
- _name = other._name;
+        _name = other._name;
         _source = other._source;
         _destination = other._destination;
         _time = Time(other._time);
@@ -65,10 +65,10 @@ string Train::getDestination() const {
     return _destination;
 }
 
-string Train::getTime() const {
+Time Train::getTime() const {
     return _time.getTime();
 }
 
-string Train::getRemainingCapacity() const {
-    return to_string(_remainingCapacity);
+int Train::getRemainingCapacity() const {
+    return _remainingCapacity;
 }

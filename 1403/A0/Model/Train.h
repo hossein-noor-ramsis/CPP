@@ -14,7 +14,7 @@ class Train {
     string _destination;
 
     Time _time;
-    unsigned int _remainingCapacity = 0;
+    int _remainingCapacity = 0;
 
 public:
     Train();
@@ -40,9 +40,9 @@ public:
 
     string getDestination() const;
 
-    string getTime() const;
+    Time getTime() const;
 
-    string getRemainingCapacity() const;
+    int getRemainingCapacity() const;
 };
 
 #endif //A0_03_TRAIN_H
