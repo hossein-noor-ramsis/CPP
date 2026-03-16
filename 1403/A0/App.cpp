@@ -3,30 +3,44 @@
 //
 
 #include "App.h"
-#include "consts.h"
+#include "Utils/String.h"
 
-App App::_instance; // Definition
+App &App::build() {
+    return _instance;
+}
+
+void App::addCommand(const string &name, void (*callback)(vector<string> &body)) {
+    commands.insert({name, callback});
+}
 
 // ReSharper disable once CppMemberFunctionMayBeStatic
 void App::run() { // NOLINT(*-convert-member-functions-to-static)
-    cout << "App Started!" << endl;
-    string cmd;
+    try {
+        cout << "App Started!" << endl;
+        string cmd;
 
-    while (true) {
-        getline(cin, cmd, '\n');
+        while (true) {
+            getline(cin, cmd, '\n');
 
-        if (cmd == Command::EXIT) {
-            break;
+            vector<string> parts = String::split(cmd, ' ');
+            const string &command = parts[0];
+
+            if (command == "exit") {
+                break;
+            }
+
+            map<string, void(*)(vector<string> &)>::iterator it;
+            it = commands.find(command);
+
+            if (it != commands.end()) {
+                parts.erase(parts.begin());
+                it->second(parts);
+            } else {
+                cout << "Command not found" << endl;
+            }
         }
 
-        if (cmd == Command::ADD_TRAINS) {
-            // addTrains();
-        }
-
-        if (cmd == Command::FIND_TICKETS) {
-            // buyTickets();
-        }
+        cout << "App Closed!" << endl;
+    } catch (...) {
     }
-
-    cout << "App Closed!" << endl;
 }
