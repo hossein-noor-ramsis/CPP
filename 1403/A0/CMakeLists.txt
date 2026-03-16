@@ -18,4 +18,8 @@ add_executable(A0 main.cpp
         Controller/TrainController.h
         Controller/TicketController.cpp
         Controller/TicketController.h
+        View/DefaultView.cpp
+        View/DefaultView.h
+        View/ErrorView.cpp
+        View/ErrorView.h
 )

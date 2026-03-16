@@ -4,6 +4,7 @@
 
 #ifndef A0_03_APP_H
 #define A0_03_APP_H
+#include <functional>
 #include <iostream>
 #include <map>
 #include <ostream>
@@ -16,7 +17,7 @@ using namespace std;
 class App {
     static App _instance; // Initialized once, thread-safe in C++11+
 
-    map<string, void (*)(vector<string> &body)> commands = {};
+    map<string, function<void (const vector<string> &body)> > commands = {};
 
     App() {
         cout << "App created!" << endl;
@@ -29,11 +30,9 @@ public:
 
     static App &build();
 
-    void addCommand(const string &name, void (*callback)(vector<string> &body));
+    void addCommand(const string &name, const function<void (const vector<string> &body)> &callback);
 
     void run();
 };
-
-App App::_instance; // Definition
 
 #endif //A0_03_APP_H

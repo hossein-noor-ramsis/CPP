@@ -5,11 +5,13 @@
 #include "App.h"
 #include "Utils/String.h"
 
+App App::_instance; // Definition
+
 App &App::build() {
     return _instance;
 }
 
-void App::addCommand(const string &name, void (*callback)(vector<string> &body)) {
+void App::addCommand(const string &name, const function<void (const vector<string> &body)> &callback) {
     commands.insert({name, callback});
 }
 
@@ -29,8 +31,8 @@ void App::run() { // NOLINT(*-convert-member-functions-to-static)
                 break;
             }
 
-            map<string, void(*)(vector<string> &)>::iterator it;
-            it = commands.find(command);
+            // ReSharper disable once CppTooWideScopeInitStatement
+            auto it = commands.find(command);
 
             if (it != commands.end()) {
                 parts.erase(parts.begin());
