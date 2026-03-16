@@ -12,6 +12,8 @@ using namespace std;
 class String {
 public:
     static vector<string> split(const string &str, char delim);
+
+    static string join(const vector<string> &vec, char delim);
 };
 
 #endif //A0_STRING_H

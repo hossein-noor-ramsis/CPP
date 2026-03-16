@@ -17,3 +17,13 @@ vector<string> String::split(const string &str, const char delim) {
 
     return parts;
 }
+
+string String::join(const vector<string> &vec, const char delim) {
+    string str;
+
+    for (const auto &s: vec) {
+        str.append(s + delim);
+    }
+
+    return str;
+}
