@@ -16,7 +16,16 @@ public:
 
     explicit Time(const string &time);
 
-    string getTime() const; // NOLINT(*-use-nodiscard)
+    // Overload the compare operators
+    bool operator==(const Time &other) const;
+
+    bool operator>(const Time &other) const;
+
+    bool operator<(const Time &other) const;
+
+    string toString() const;
+
+    Time getTime() const;
 };
 
 #endif //A0_03_TIME_H

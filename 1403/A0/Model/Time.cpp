@@ -30,7 +30,35 @@ Time::Time(const string &time) {
     _minute = minute;
 }
 
-string Time::getTime() const {
+bool Time::operator==(const Time &other) const {
+    return this->_hour == other._hour && this->_minute == other._minute;
+}
+
+bool Time::operator>(const Time &other) const {
+    if (this->_hour > other._hour) {
+        return true;
+    }
+
+    if (this->_hour == other._hour && this->_minute > other._minute) {
+        return true;
+    }
+
+    return false;
+}
+
+bool Time::operator<(const Time &other) const {
+    if (this->_hour < other._hour) {
+        return true;
+    }
+
+    if (this->_hour == other._hour && this->_minute < other._minute) {
+        return true;
+    }
+
+    return false;
+}
+
+string Time::toString() const {
     string hour = to_string(_hour);
     string minute = to_string(_minute);
 
@@ -43,4 +71,8 @@ string Time::getTime() const {
     }
 
     return hour + ":" + minute;
+}
+
+Time Time::getTime() const {
+    return Time(this->toString());
 }
