@@ -7,6 +7,7 @@
 
 namespace Command {
     inline auto EXIT = "exit";
+    inline auto ADD_TRAIN = "add_train";
     inline auto ADD_TRAINS = "add_trains";
     inline auto FIND_TICKETS = "find_tickets";
 }
