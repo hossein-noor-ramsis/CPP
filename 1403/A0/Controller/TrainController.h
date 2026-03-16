@@ -16,8 +16,15 @@ class TrainController {
 public:
     explicit TrainController(const DB &db);
 
+    /**
+     * add_train <train_name> <source> <destination> <time> <remaining_capacity>
+     */
     void addTrain(const vector<string> &body);
 
+    /**
+     * add_trains 5\n
+     * <train_name> <source> <destination> <time> <remaining_capacity>
+     */
     void addTrains(const vector<string> &body);
 };
 

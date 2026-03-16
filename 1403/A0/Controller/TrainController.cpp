@@ -22,7 +22,6 @@ void TrainController::addTrains(const vector<string> &body) {
 
     for (int i = 0; i < stoi(body[0]); ++i) {
         getline(cin, train, '\n');
-        _db.trains.insert(Train());
+        _db.trains.insert(Train(train));
     }
 }
-
