@@ -17,7 +17,22 @@ class Train {
     unsigned int _remainingCapacity = 0;
 
 public:
+    Train();
+
     explicit Train(const string &train);
+
+    // Copy constructor
+    Train(const Train &other);
+
+    // Overload the assignment operator
+    Train &operator=(const Train &other);
+
+    // Overload the compare operators
+    bool operator==(const Train &other) const;
+
+    bool operator>(const Train &other) const;
+
+    bool operator<(const Train &other) const;
 
     string getName() const;
 

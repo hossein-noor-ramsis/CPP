@@ -12,4 +12,5 @@ add_executable(A0 main.cpp
         App.h
         consts.h
         Utils/String.cpp
-        Utils/String.h)
+        Utils/String.h
+        DB.h)

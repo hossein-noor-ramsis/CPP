@@ -8,6 +8,8 @@
 
 #include "../Utils/String.h"
 
+Train::Train() = default;
+
 Train::Train(const string &train) {
     const vector<string> parts = String::split(train, ' ');
 
@@ -16,6 +18,39 @@ Train::Train(const string &train) {
     _destination = parts[2];
     _time = Time(parts[3]);
     _remainingCapacity = stoi(parts[4]);
+}
+
+Train::Train(const Train &other) {
+    this->_name = other.getName();
+    this->_source = other.getSource();
+    this->_destination = other.getDestination();
+    this->_time = Time(other.getTime());
+    this->_remainingCapacity = stoi(getRemainingCapacity());
+}
+
+Train &Train::operator=(const Train &other) {
+    if (this != &other) {
+        // Check for self-assignment
+ _name = other._name;
+        _source = other._source;
+        _destination = other._destination;
+        _time = Time(other._time);
+        _remainingCapacity = other._remainingCapacity;
+    }
+
+    return *this;
+}
+
+bool Train::operator==(const Train &other) const {
+    return this->getTime() == other.getTime();
+}
+
+bool Train::operator>(const Train &other) const {
+    return this->getTime() > other.getTime();
+}
+
+bool Train::operator<(const Train &other) const {
+    return this->getTime() < other.getTime();
 }
 
 string Train::getName() const {
