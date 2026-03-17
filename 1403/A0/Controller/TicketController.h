@@ -4,14 +4,22 @@
 
 #ifndef A0_TICKET_CONTROLLER_H
 #define A0_TICKET_CONTROLLER_H
+#include <vector>
+
 #include "../DB.h"
 
+using namespace std;
 
 class TicketController {
-    DB _db;
+    DB &_db;
 
 public:
-    explicit TicketController(const DB &db);
+    explicit TicketController(DB &db);
+
+    /**
+     * find_ticket <source> <destination> <first_possible_time> <count>
+     */
+    void findTicket(const vector<string> &body) const;
 };
 
 
