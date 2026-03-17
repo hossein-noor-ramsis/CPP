@@ -4,6 +4,9 @@
 
 #include "Train.h"
 
+#include <iostream>
+#include <ostream>
+#include <pthread_time.h>
 #include <vector>
 
 #include "../Utils/String.h"
@@ -25,7 +28,7 @@ Train::Train(const Train &other) {
     this->_source = other.getSource();
     this->_destination = other.getDestination();
     this->_time = Time(other.getTime());
-    this->_remainingCapacity = getRemainingCapacity();
+    this->_remainingCapacity = other.getRemainingCapacity();
 }
 
 Train &Train::operator=(const Train &other) {
@@ -71,4 +74,8 @@ Time Train::getTime() const {
 
 int Train::getRemainingCapacity() const {
     return _remainingCapacity;
+}
+
+string Train::toString() const {
+    return _name + " " + _time.toString() + " " + to_string(_remainingCapacity);
 }

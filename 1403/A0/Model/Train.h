@@ -43,6 +43,8 @@ public:
     Time getTime() const;
 
     int getRemainingCapacity() const;
+
+    string toString() const;
 };
 
 #endif //A0_03_TRAIN_H
