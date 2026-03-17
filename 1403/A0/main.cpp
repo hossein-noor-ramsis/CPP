@@ -6,12 +6,12 @@
 using namespace std;
 
 int main() {
-    const DB db;
+    DB db;
     App &app = App::build();
 
     // controllers start
-    auto trainController = TrainController(db);
-    auto ticketController = TicketController(db);
+    const auto trainController = TrainController(db);
+    const auto ticketController = TicketController(db);
     // controllers end
 
     // commands start
@@ -19,8 +19,14 @@ int main() {
         trainController.addTrain(body);
     });
 
-    // commands end
+    app.addCommand(Command::ADD_TRAINS, [&](const vector<string> &body) {
+        trainController.addTrains(body);
+    });
 
+    app.addCommand(Command::FIND_TICKETS, [&](const vector<string> &body) {
+        ticketController.findTicket(body);
+    });
+    // commands end
 
     app.run();
 

@@ -22,4 +22,6 @@ add_executable(A0 main.cpp
         View/DefaultView.h
         View/ErrorView.cpp
         View/ErrorView.h
+        View/ListView.cpp
+        View/ListView.h
 )
