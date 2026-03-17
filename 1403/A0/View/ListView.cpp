@@ -16,5 +16,5 @@ void ListView::print(const vector<string> &messages) {
     }
 
     cout << "=============================================================" << endl;
-    cout << "* enter help: to show the help menu, exit: to close the app *" << endl;
+    cout << "* enter help: to show the help menu, exit: to close the app *\n" << endl;
 }

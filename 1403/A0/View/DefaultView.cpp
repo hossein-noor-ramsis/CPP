@@ -13,5 +13,5 @@ void DefaultView::print(const string &message) {
     cout << "=============================================================" << endl;
     cout << "* " << message << " *" << endl;
     cout << "=============================================================" << endl;
-    cout << "* enter help: to show the help menu, exit: to close the app *" << endl;
+    cout << "* enter help: to show the help menu, exit: to close the app *\n" << endl;
 }
