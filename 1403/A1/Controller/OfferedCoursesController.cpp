@@ -42,6 +42,8 @@ void OfferedCoursesController::GetOfferedCourses([[maybe_unused]] const vector<s
   string coursesNameRaw;
   getline(cin, coursesNameRaw, '\n');
 
+  const vector<string> coursesNameVec = String::split(coursesNameRaw, ' ');
+
   int units = 0;
   vector<Grade> grades;
 
@@ -54,27 +56,25 @@ void OfferedCoursesController::GetOfferedCourses([[maybe_unused]] const vector<s
 
   const double gpa = Math::CalculateGPA(grades);
 
-  int maxUnitsLimit = 24;
-  int minUnitsLimit = 12;
 
-  if (gpa < 12)
-  {
-    maxUnitsLimit = 14;
-  }
+  int maxUnitsLimit = 24;
+  constexpr int minUnitsLimit = 12;
 
   if (gpa < 17)
   {
     maxUnitsLimit = 20;
   }
 
-  const vector<string> coursesNameVec = String::split(coursesNameRaw, ' ');
+  if (gpa < 12)
+  {
+    maxUnitsLimit = 14;
+  }
+
 
   for (const auto& courseName : coursesNameVec)
   {
-    OfferedCourse offeredCourse;
-    offeredCourse.Name(courseName);
-
-    auto offeredCourseIt = _db.offeredCourses.find(offeredCourse);
+    //* COURSE_NOT_OFFERED
+    auto offeredCourseIt = _db.offeredCourses.find(OfferedCourse(courseName));
 
     if (offeredCourseIt == _db.offeredCourses.end())
     {
@@ -82,6 +82,7 @@ void OfferedCoursesController::GetOfferedCourses([[maybe_unused]] const vector<s
       return;
     }
 
+    //* PREREQUISITES_NOT_MET
     for (const auto& pre : offeredCourseIt->Prerequisites())
     {
       TakenCourse takenCourse;
@@ -96,10 +97,8 @@ void OfferedCoursesController::GetOfferedCourses([[maybe_unused]] const vector<s
       }
     }
 
-    TakenCourse takenCourse;
-    takenCourse.Name(courseName);
-
-    auto prevTakenCourseIt = _db.previousTakenCourses.find(takenCourse);
+    //* COURSE_ALREADY_TAKEN
+    auto prevTakenCourseIt = _db.previousTakenCourses.find(TakenCourse(courseName));
 
     if (prevTakenCourseIt != _db.previousTakenCourses.end() && prevTakenCourseIt->Status() == PASSED)
     {
@@ -107,19 +106,38 @@ void OfferedCoursesController::GetOfferedCourses([[maybe_unused]] const vector<s
       return;
     }
 
+    cout << "log: " << offeredCourseIt->Units() << endl;
+
     units += offeredCourseIt->Units();
   }
 
+  //* MINIMUM_UNITS_VALIDATION_FAILED
   if (units < minUnitsLimit)
   {
     ErrorView::print(Results::MINIMUM_UNITS_VALIDATION_FAILED);
     return;
   }
 
+  //* MAXIMUM_UNITS_VALIDATION_FAILED
+  cout << "log: " << units << endl;
+  cout << "log: " << maxUnitsLimit << endl;
+  cout << "log: " << gpa << endl;
+
   if (units > maxUnitsLimit)
   {
     ErrorView::print(Results::MAXIMUM_UNITS_VALIDATION_FAILED);
     return;
+  }
+
+  //* OK
+  for (const auto& courseName : coursesNameVec)
+  {
+    const auto courseIt = _db.offeredCourses.find(OfferedCourse(courseName));
+
+    TakenCourse course;
+    course.Name(courseIt->Name());
+    course.Units(course.Units());
+    _db.currentTakenCourses.insert(course);
   }
 
   DefaultView::print(Results::OK);

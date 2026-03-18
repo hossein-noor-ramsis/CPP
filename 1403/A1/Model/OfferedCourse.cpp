@@ -4,6 +4,11 @@
 
 #include "OfferedCourse.h"
 
+OfferedCourse::OfferedCourse(const string& name)
+{
+  _name = name;
+}
+
 OfferedCourse::OfferedCourse(const OfferedCourse& other)
 {
   _name = other._name;

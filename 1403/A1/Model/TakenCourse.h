@@ -31,6 +31,8 @@ public:
 
   TakenCourse(const TakenCourse& other);
 
+  explicit TakenCourse(const string& name);
+
   TakenCourse& operator=(const TakenCourse& other);
 
   friend bool operator==(const TakenCourse& lhs, const TakenCourse& rhs);

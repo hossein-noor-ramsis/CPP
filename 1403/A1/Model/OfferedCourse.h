@@ -18,6 +18,8 @@ class OfferedCourse
 public:
   OfferedCourse() = default;
 
+  explicit OfferedCourse(const string& name);
+
   OfferedCourse(const OfferedCourse& other);
 
   OfferedCourse& operator=(const OfferedCourse& other);

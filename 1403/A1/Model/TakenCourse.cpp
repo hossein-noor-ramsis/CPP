@@ -24,6 +24,11 @@ TakenCourse::TakenCourse(const TakenCourse& other)
   _status = other._status;
 }
 
+TakenCourse::TakenCourse(const string& name)
+{
+  _name = name;
+}
+
 TakenCourse& TakenCourse::operator=(const TakenCourse& other)
 {
   if (this == &other)

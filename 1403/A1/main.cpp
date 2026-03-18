@@ -25,7 +25,7 @@ int main()
   });
 
   app.addCommand(Command::GET_OFFERED_COURSES, [&](const vector<string>& body) {
-    offeredCoursesController.AddOfferedCourses(body);
+    offeredCoursesController.GetOfferedCourses(body);
   });
   // commands end
 
@@ -35,3 +35,4 @@ int main()
 }
 
 // fix all fixable errors: Ctrl + .
+// NetworkLaboratory 1 ComputerNetworks
