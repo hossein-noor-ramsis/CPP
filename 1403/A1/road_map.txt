@@ -1,0 +1,6 @@
+﻿1: add Commands to consts.h
+2: add Results to consts.h
+3: add Entities and DataObjects to Models
+4: add Models to the DB like Set<ModelName>
+5: add Command Handlers to Command Controllers
+5: add Views
