@@ -12,50 +12,50 @@ using namespace std;
 
 enum CourseStatus
 {
-    NONE,
-    PASSED,
-    FAILED,
+  NONE,
+  PASSED,
+  FAILED,
 };
 
 class TakenCourse
 {
-    string _name;
-    int _units = 0;
-    optional<double> _grade;
-    CourseStatus _status = NONE;
+  string _name;
+  int _units = 0;
+  optional<double> _grade;
+  CourseStatus _status = NONE;
 
-  public:
-    TakenCourse() = default;
+  void CheckStatus();
 
-    TakenCourse(const TakenCourse &other);
+public:
+  TakenCourse() = default;
 
-    TakenCourse &operator=(const TakenCourse &other);
+  TakenCourse(const TakenCourse& other);
 
-    friend bool operator==(const TakenCourse &lhs, const TakenCourse &rhs);
+  TakenCourse& operator=(const TakenCourse& other);
 
-    friend bool operator!=(const TakenCourse &lhs, const TakenCourse &rhs);
+  friend bool operator==(const TakenCourse& lhs, const TakenCourse& rhs);
 
-    friend bool operator<(const TakenCourse &lhs, const TakenCourse &rhs);
+  friend bool operator!=(const TakenCourse& lhs, const TakenCourse& rhs);
 
-    friend bool operator>(const TakenCourse &lhs, const TakenCourse &rhs);
+  friend bool operator<(const TakenCourse& lhs, const TakenCourse& rhs);
 
-    string Name() const;
+  friend bool operator>(const TakenCourse& lhs, const TakenCourse& rhs);
 
-    void Name(const string &name);
+  string Name() const;
 
-    int Units() const;
+  void Name(const string& name);
 
-    void Units(int units);
+  int Units() const;
 
-    optional<double> Grade() const;
+  void Units(int units);
 
-    void Grade(const double &grade);
+  optional<double> Grade() const;
 
-    bool IsPassed() const;
+  void Grade(const double& grade);
 
-    CourseStatus Status() const;
+  bool IsPassed() const;
 
-    void Status(const CourseStatus &status);
+  CourseStatus Status() const;
 };
 
 #endif // A1_TAKEN_COURSES_H

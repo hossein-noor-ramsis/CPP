@@ -24,4 +24,6 @@ add_executable(A1 main.cpp
         Controller/OfferedCoursesController.h
         Controller/TakenCoursesController.cpp
         Controller/TakenCoursesController.h
+        Utils/Math.cpp
+        Utils/Math.h
 )

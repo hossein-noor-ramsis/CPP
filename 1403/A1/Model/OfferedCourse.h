@@ -11,36 +11,36 @@ using namespace std;
 
 class OfferedCourse
 {
-    string _name;
-    int _units = 0;
-    vector<string> _prerequisites;
+  string _name;
+  int _units = 0;
+  vector<string> _prerequisites;
 
-  public:
-    OfferedCourse() = default;
+public:
+  OfferedCourse() = default;
 
-    OfferedCourse(const OfferedCourse &other);
+  OfferedCourse(const OfferedCourse& other);
 
-    OfferedCourse &operator=(const OfferedCourse &other);
+  OfferedCourse& operator=(const OfferedCourse& other);
 
-    friend bool operator==(const OfferedCourse &lhs, const OfferedCourse &rhs);
+  friend bool operator==(const OfferedCourse& lhs, const OfferedCourse& rhs);
 
-    friend bool operator!=(const OfferedCourse &lhs, const OfferedCourse &rhs);
+  friend bool operator!=(const OfferedCourse& lhs, const OfferedCourse& rhs);
 
-    friend bool operator<(const OfferedCourse &lhs, const OfferedCourse &rhs);
+  friend bool operator<(const OfferedCourse& lhs, const OfferedCourse& rhs);
 
-    friend bool operator>(const OfferedCourse &lhs, const OfferedCourse &rhs);
+  friend bool operator>(const OfferedCourse& lhs, const OfferedCourse& rhs);
 
-    string Name() const;
+  string Name() const;
 
-    void Name(const string &name);
+  void Name(const string& name);
 
-    int Units() const;
+  int Units() const;
 
-    void Units(int units);
+  void Units(int units);
 
-    vector<string> Prerequisites() const;
+  vector<string> Prerequisites() const;
 
-    void Prerequisites(const vector<string> &prerequisites);
+  void Prerequisites(const vector<string>& prerequisites);
 };
 
 #endif // A1_OFFERED_COURSES_H

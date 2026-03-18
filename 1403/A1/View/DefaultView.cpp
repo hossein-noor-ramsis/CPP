@@ -7,11 +7,12 @@
 #include <iostream>
 #include <sstream>
 
-void DefaultView::print(const string &message) {
-    // system("cls");
+void DefaultView::print(const string& message)
+{
+  // system("cls");
 
-    cout << "=============================================================" << endl;
-    cout << "* " << message << " *" << endl;
-    cout << "=============================================================" << endl;
-    cout << "* enter help: to show the help menu, exit: to close the app *\n" << endl;
+  cout << "=============================================================" << endl;
+  cout << "* " << message << " *" << endl;
+  cout << "=============================================================" << endl;
+  cout << "* enter help: to show the help menu, exit: to close the app *\n" << endl;
 }

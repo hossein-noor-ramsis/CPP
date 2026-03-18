@@ -3,4 +3,5 @@
 3: add Entities and DataObjects to Models
 4: add Models to the DB like Set<ModelName>
 5: add Command Handlers to Command Controllers
-5: add Views
+5: add View
+6: refactor

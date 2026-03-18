@@ -8,16 +8,16 @@
 
 class TakenCoursesController
 {
-    DB &_db;
+  DB& _db;
 
-  public:
-    explicit TakenCoursesController(DB &db);
+public:
+  explicit TakenCoursesController(DB& db);
 
-    /**
-     * add_taken_courses <int> \n
-     * <course_name> <units> <grade>
-     */
-    void AddTakenCourses(const vector<string> &body) const;
+  /**
+   * add_taken_courses <int> \n
+   * <course_name> <units> <grade>
+   */
+  void AddTakenCourses(const vector<string>& body) const;
 };
 
 #endif // A1_TAKEN_COURSES_CONTROLLER_H

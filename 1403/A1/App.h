@@ -14,25 +14,27 @@
 
 using namespace std;
 
-class App {
-    static App _instance; // Initialized once, thread-safe in C++11+
+class App
+{
+  static App _instance; // Initialized once, thread-safe in C++11+
 
-    map<string, function<void (const vector<string> &body)> > commands = {};
+  map<string, function<void (const vector<string>& body)>> commands = {};
 
-    App() {
-        cout << "App created!" << endl;
-    }
+  App()
+  {
+    cout << "App created!" << endl;
+  }
 
 public:
-    App(const App &) = delete;
+  App(const App&) = delete;
 
-    App &operator=(const App &) = delete;
+  App& operator=(const App&) = delete;
 
-    static App &build();
+  static App& build();
 
-    void addCommand(const string &name, const function<void (const vector<string> &body)> &callback);
+  void addCommand(const string& name, const function<void (const vector<string>& body)>& callback);
 
-    void run();
+  void run();
 };
 
 #endif //A0_03_APP_H

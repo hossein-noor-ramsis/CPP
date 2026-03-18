@@ -6,15 +6,17 @@
 
 #include <iostream>
 
-void ListView::print(const vector<string> &messages) {
-    // system("cls");
+void ListView::print(const vector<string>& messages)
+{
+  // system("cls");
 
-    cout << "=============================================================" << endl;
+  cout << "=============================================================" << endl;
 
-    for (const auto &message: messages) {
-        cout << "* " << message << " *" << endl;
-    }
+  for (const auto& message : messages)
+  {
+    cout << "* " << message << " *" << endl;
+  }
 
-    cout << "=============================================================" << endl;
-    cout << "* enter help: to show the help menu, exit: to close the app *\n" << endl;
+  cout << "=============================================================" << endl;
+  cout << "* enter help: to show the help menu, exit: to close the app *\n" << endl;
 }

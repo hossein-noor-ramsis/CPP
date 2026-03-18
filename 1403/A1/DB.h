@@ -14,10 +14,10 @@ using namespace std;
 
 class DB
 {
-  public:
-    set<OfferedCourse> offeredCourses;
-    set<TakenCourse> previousTakenCourses;
-    set<TakenCourse> currentTakenCourses;
+public:
+  set<OfferedCourse> offeredCourses;
+  set<TakenCourse> previousTakenCourses;
+  set<TakenCourse> currentTakenCourses;
 };
 
 #endif // A0_DB_H

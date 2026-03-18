@@ -8,9 +8,10 @@
 
 using namespace std;
 
-class DefaultView {
+class DefaultView
+{
 public:
-    static void print(const string &message);
+  static void print(const string& message);
 };
 
 #endif //A0_DEFAULT_VIEW_H

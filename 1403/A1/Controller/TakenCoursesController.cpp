@@ -8,35 +8,26 @@
 
 #include <iostream>
 
-TakenCoursesController::TakenCoursesController(DB &db) : _db(db)
+TakenCoursesController::TakenCoursesController(DB& db) : _db(db)
 {
 }
 
-void TakenCoursesController::AddTakenCourses(const vector<string> &body) const
+void TakenCoursesController::AddTakenCourses(const vector<string>& body) const
 {
-    const int count = stoi(body[0]);
-    string courseRaw;
+  const int count = stoi(body[0]);
+  string courseRaw;
 
-    for (int i = 0; i < count; ++i)
-    {
-        TakenCourse course;
+  for (int i = 0; i < count; ++i)
+  {
+    TakenCourse course;
 
-        getline(cin, courseRaw, '\n');
-        vector<string> courseVec = String::split(courseRaw, ' ');
+    getline(cin, courseRaw, '\n');
+    vector<string> courseVec = String::split(courseRaw, ' ');
 
-        course.Name(courseVec[0]);
-        course.Units(stoi(courseVec[1]));
-        course.Grade(stoi(courseVec[2]));
+    course.Name(courseVec[0]);
+    course.Units(stoi(courseVec[1]));
+    course.Grade(stoi(courseVec[2]));
 
-        if (course.IsPassed())
-        {
-            course.Status(PASSED);
-        }
-        else
-        {
-            course.Status(FAILED);
-        }
-
-        _db.previousTakenCourses.insert(course);
-    }
+    _db.previousTakenCourses.insert(course);
+  }
 }

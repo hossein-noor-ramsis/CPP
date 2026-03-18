@@ -9,9 +9,10 @@
 
 using namespace std;
 
-class ListView {
+class ListView
+{
 public:
-    static void print(const vector<string> &messages);
+  static void print(const vector<string>& messages);
 };
 
 #endif //A0_LISTVIEW_H

@@ -4,45 +4,58 @@
 
 #include "App.h"
 #include "Utils/String.h"
+#include "View/ErrorView.h"
 
 App App::_instance; // Definition
 
-App &App::build() {
+App &App::build()
+{
     return _instance;
 }
 
-void App::addCommand(const string &name, const function<void (const vector<string> &body)> &callback) {
+void App::addCommand(const string &name, const function<void(const vector<string> &body)> &callback)
+{
     commands.insert({name, callback});
 }
 
 // ReSharper disable once CppMemberFunctionMayBeStatic
-void App::run() { // NOLINT(*-convert-member-functions-to-static)
-    try {
+void App::run()
+{ // NOLINT(*-convert-member-functions-to-static)
+    try
+    {
         cout << "App Started!" << endl;
         string cmd;
 
-        while (true) {
+        while (true)
+        {
             getline(cin, cmd, '\n');
 
             vector<string> parts = String::split(cmd, ' ');
             const string &command = parts[0];
 
-            if (command == "exit") {
+            if (command == "exit")
+            {
                 break;
             }
 
             // ReSharper disable once CppTooWideScopeInitStatement
             auto it = commands.find(command);
 
-            if (it != commands.end()) {
+            if (it != commands.end())
+            {
                 parts.erase(parts.begin());
                 it->second(parts);
-            } else {
+            }
+            else
+            {
                 cout << "Command not found" << endl;
             }
         }
 
         cout << "App Closed!" << endl;
-    } catch (...) {
+    }
+    catch (...)
+    {
+        ErrorView::print("An error occurred!");
     }
 }
