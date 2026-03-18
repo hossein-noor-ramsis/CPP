@@ -11,6 +11,8 @@
 
 #include <iostream>
 
+#include "../Utils/Math.h"
+
 OfferedCoursesController::OfferedCoursesController(DB& db) : _db(db)
 {
 }
@@ -35,15 +37,35 @@ void OfferedCoursesController::AddOfferedCourses(const vector<string>& body) con
   }
 }
 
-void OfferedCoursesController::GetOfferedCourses(const vector<string>& body)
+void OfferedCoursesController::GetOfferedCourses([[maybe_unused]] const vector<string>& body) const
 {
   string coursesNameRaw;
   getline(cin, coursesNameRaw, '\n');
 
   int units = 0;
-  double gpa = 0;
+  vector<Grade> grades;
+
+  for (const auto& prevCourse : _db.previousTakenCourses)
+  {
+    auto grade = Grade(prevCourse.Grade().value(), prevCourse.Units());
+
+    grades.push_back(grade);
+  }
+
+  const double gpa = Math::CalculateGPA(grades);
+
   int maxUnitsLimit = 24;
   int minUnitsLimit = 12;
+
+  if (gpa < 12)
+  {
+    maxUnitsLimit = 14;
+  }
+
+  if (gpa < 17)
+  {
+    maxUnitsLimit = 20;
+  }
 
   const vector<string> coursesNameVec = String::split(coursesNameRaw, ' ');
 
@@ -88,7 +110,17 @@ void OfferedCoursesController::GetOfferedCourses(const vector<string>& body)
     units += offeredCourseIt->Units();
   }
 
+  if (units < minUnitsLimit)
+  {
+    ErrorView::print(Results::MINIMUM_UNITS_VALIDATION_FAILED);
+    return;
+  }
+
+  if (units > maxUnitsLimit)
+  {
+    ErrorView::print(Results::MAXIMUM_UNITS_VALIDATION_FAILED);
+    return;
+  }
+
   DefaultView::print(Results::OK);
 }
-
-// TODO: calculate GPA method

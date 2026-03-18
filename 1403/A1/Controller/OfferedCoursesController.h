@@ -26,7 +26,7 @@ public:
    * get_offered_courses <int_k> \n
    * <course_name_1> <course_name_2> ... <course_name_k>
    */
-  void GetOfferedCourses(const vector<string>& body);
+  void GetOfferedCourses(const vector<string>& body) const;
 };
 
 #endif // A1_OFFERED_COURSES_CONTROLLER_H
