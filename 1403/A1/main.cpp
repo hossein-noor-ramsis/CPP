@@ -1,6 +1,6 @@
 ﻿#include "App.h"
-#include "Controller/OfferedCoursesController.h"
-#include "Controller/TakenCoursesController.h"
+#include "Controllers/OfferedCoursesController.h"
+#include "Controllers/TakenCoursesController.h"
 #include "consts.h"
 
 using namespace std;

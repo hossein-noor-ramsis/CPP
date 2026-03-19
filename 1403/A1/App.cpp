@@ -4,7 +4,7 @@
 
 #include "App.h"
 #include "Utils/String.h"
-#include "View/ErrorView.h"
+#include "Views/ErrorView.h"
 
 App App::_instance; // Definition
 

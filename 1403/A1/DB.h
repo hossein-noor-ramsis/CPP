@@ -5,8 +5,8 @@
 #ifndef A0_DB_H
 #define A0_DB_H
 
-#include "Model/OfferedCourse.h"
-#include "Model/TakenCourse.h"
+#include "Models/OfferedCourse.h"
+#include "Models/TakenCourse.h"
 
 #include <set>
 

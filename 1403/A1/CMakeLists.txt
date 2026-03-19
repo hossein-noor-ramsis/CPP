@@ -10,20 +10,20 @@ add_executable(A1 main.cpp
         Utils/String.cpp
         Utils/String.h
         DB.h
-        View/DefaultView.cpp
-        View/DefaultView.h
-        View/ErrorView.cpp
-        View/ErrorView.h
-        View/ListView.cpp
-        View/ListView.h
-        Model/OfferedCourse.cpp
-        Model/OfferedCourse.h
-        Model/TakenCourse.cpp
-        Model/TakenCourse.h
-        Controller/OfferedCoursesController.cpp
-        Controller/OfferedCoursesController.h
-        Controller/TakenCoursesController.cpp
-        Controller/TakenCoursesController.h
+        Views/DefaultView.cpp
+        Views/DefaultView.h
+        Views/ErrorView.cpp
+        Views/ErrorView.h
+        Views/ListView.cpp
+        Views/ListView.h
+        Models/OfferedCourse.cpp
+        Models/OfferedCourse.h
+        Models/TakenCourse.cpp
+        Models/TakenCourse.h
+        Controllers/OfferedCoursesController.cpp
+        Controllers/OfferedCoursesController.h
+        Controllers/TakenCoursesController.cpp
+        Controllers/TakenCoursesController.h
         Utils/Math.cpp
         Utils/Math.h
 )
